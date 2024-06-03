@@ -54,7 +54,7 @@ function draw() {
   // flip horizontal
   cam = get();
   translate(cam.width, 0);
-  // scale(-1, 1);
+  scale(-1, 1);
   image(cam, 0, 0);
 }
 
@@ -69,11 +69,12 @@ function drawSkeleton() {
     
      //頭上學號姓名
     if(partA.score > 0.1){
-      push()
-        textSize(50)
-        // scale(-1,1)
-        text("412730185,游子伶",partA.x+500,partA.y-150)
-      pop()
+      push();
+        textSize(50);
+        scale(-1,1)
+        translate(-width, 0); // 翻轉座標
+        text("412730185,游子伶", width - partA.x - 200, partA.y - 150);
+      pop();
     }
 
 
@@ -91,8 +92,8 @@ function drawSkeleton() {
     if (partA.score > 0.1 && partB.score > 0.1) {
       // line(partA.x, partA.y, partB.x, partB.y);
       push()
-        image(carlmg,partA.x-75, partA.y-75,150,150) //
-        image(carlmg,partB.x-75, partB.y-75,150,150) //
+        image(carImg,partA.x-10, partA.y-55,carImg.width,carImg.height) //
+        image(carImg,partB.x-60, partB.y-55,carImg.width,carImg.height) //
       pop()
       }
       
