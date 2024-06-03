@@ -102,6 +102,13 @@ function drawSkeleton() {
         
       }
     }
+          // Add text above nose
+    if (pose.keypoints[0].score > 0.1) {
+      textAlign(CENTER, BOTTOM);
+      textSize(16);
+      fill(255);
+      text("Your Text", pose.keypoints[0].x, pose.keypoints[0].y - 10);
+    }
   }
 }
 
