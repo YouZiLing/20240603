@@ -5,7 +5,7 @@ https://www.tensorflow.org/hub/tutorials/movenet
 
 */
 function preload(){
-  carlmg = loadImage("car.gif")
+  carImg = loadImage("car.gif")
 }
 
 
