@@ -72,11 +72,12 @@ function drawSkeleton() {
     partB = pose.keypoints[2];
     if (partA.score > 0.1 && partB.score > 0.1) {
       // line(partA.x, partA.y, partB.x, partB.y);
-      push()
+      push();
         image(carlmg,partA.x-75, partA.y-75,150,150)
-        //print(partA.x
-      pop()
-      
+        //print(partA.x)
+      pop();
+    }
+    
     // shoulder to shoulder
     partA = pose.keypoints[5];
     partB = pose.keypoints[6];
