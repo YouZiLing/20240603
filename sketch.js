@@ -107,7 +107,7 @@ function drawSkeleton() {
       textAlign(CENTER, BOTTOM);
       textSize(16);
       fill(255);
-      text("Your Text", pose.keypoints[0].x, pose.keypoints[0].y - 10);
+      text("412730185", pose.keypoints[0].x+10, pose.keypoints[0].y - 10);
     }
   }
 }
