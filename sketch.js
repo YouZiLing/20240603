@@ -67,13 +67,13 @@ function drawSkeleton() {
 
     partA = pose.keypoints[0];
     
-     //頭上學號姓名
+    //--------------頭上學號姓名
     if(partA.score > 0.1){
       push();
         textSize(50);
-        scale(-1,1)
-        translate(-width, 0); // 翻轉座標
-        text("412730185,游子伶", width - partA.x - 200, partA.y - 150);
+        scale(-1,1) //翻轉文字
+        translate(-width, 0); //翻轉座標
+        text("412730185游子伶", width - partA.x - 200, partA.y - 150);
       pop();
     }
 
@@ -86,13 +86,13 @@ function drawSkeleton() {
       }
     }
 
-    // 眼睛
+    // ---------------eyes
     partA = pose.keypoints[1];
     partB = pose.keypoints[2];
     if (partA.score > 0.1 && partB.score > 0.1) {
       // line(partA.x, partA.y, partB.x, partB.y);
       push()
-        image(carImg,partA.x-10, partA.y-55,carImg.width,carImg.height) //
+        image(carImg,partA.x-20, partA.y-55,carImg.width,carImg.height) //
         image(carImg,partB.x-60, partB.y-55,carImg.width,carImg.height) //
       pop()
       }
@@ -102,8 +102,20 @@ function drawSkeleton() {
     partB = pose.keypoints[6];
     if (partA.score > 0.1 && partB.score > 0.1) {
       // line(partA.x, partA.y, partB.x, partB.y);
-      
-    }
+      }
+
+    // ----------------wrists
+    partA = pose.keypoints[9];
+    partB = pose.keypoints[10];
+    if (partA.score > 0.1 && partB.score > 0.1) {
+      // line(partA.x, partA.y, partB.x, partB.y);
+      push()
+        image(carImg,partA.x-30, partA.y-80,carImg.width,carImg.height) //
+        image(carImg,partB.x-50, partB.y-80,carImg.width,carImg.height) //
+      pop()
+      }
+
+
     // hip to hip
     partA = pose.keypoints[11];
     partB = pose.keypoints[12];
@@ -111,13 +123,14 @@ function drawSkeleton() {
       // line(partA.x, partA.y, partB.x, partB.y);
       
     }
-    // shoulders to hips
+    // shoulders to hips(left)
     partA = pose.keypoints[5];
     partB = pose.keypoints[11];
     if (partA.score > 0.1 && partB.score > 0.1) {
       // line(partA.x, partA.y, partB.x, partB.y);
       
     }
+    // shoulders to hips(right)  
     partA = pose.keypoints[6];
     partB = pose.keypoints[12];
     if (partA.score > 0.1 && partB.score > 0.1) {
