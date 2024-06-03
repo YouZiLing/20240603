@@ -104,11 +104,12 @@ function drawSkeleton() {
     }
           // 頭上學號
     if (pose.keypoints[0].score > 0.1) {
+      translate(video.width, 0);
       scale(-1,1)
       textAlign(CENTER);
       textSize(50);
       fill(255);
-      text("412730185", pose.keypoints[0].x, pose.keypoints[0].y -90);
+      text("412730185", pose.keypoints[0].x, pose.keypoints[0].y -100);
     }
   }
 }
