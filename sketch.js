@@ -5,7 +5,7 @@ https://www.tensorflow.org/hub/tutorials/movenet
 
 */
 function preload(){
-  doglmg = loadlmage("car.gif")
+  carlmg = loadImage("car.gif")
 }
 
 
@@ -62,7 +62,21 @@ function drawSkeleton() {
   // Draw all the tracked landmark points
   for (let i = 0; i < poses.length; i++) {
     pose = poses[i];
+
     // shoulder to wrist
+
+    partA = pose.keypoints[0];
+    
+     //頭上學號姓名
+    if(partA.score > 0.1){
+      push()
+        textSize(50)
+        scale(-1,1)
+        text("412730185,游子伶",partA.x-width,partA.y-150)
+      pop()
+    }
+
+
     for (j = 5; j < 9; j++) {
       if (pose.keypoints[j].score > 0.1 && pose.keypoints[j + 2].score > 0.1) {
         partA = pose.keypoints[j];
@@ -77,8 +91,8 @@ function drawSkeleton() {
     if (partA.score > 0.1 && partB.score > 0.1) {
       // line(partA.x, partA.y, partB.x, partB.y);
       push()
-        image(carlmg,partA.x-75, partA.y-75,150,150)
-        //print(partA.x
+        image(carlmg,partA.x-75, partA.y-75,150,150) //
+        image(carlmg,partB.x-75, partB.y-75,150,150) //
       pop()
       }
       
@@ -118,15 +132,9 @@ function drawSkeleton() {
         
       }
     }
-          // 頭上學號
-    if (pose.keypoints[0].score > 0.1) {
-      textAlign(CENTER);
-      textSize(50);
-      fill(255);
-      text("412730185", pose.keypoints[0].x, pose.keypoints[0].y -100);
     }
   }
-}
+
 
 /* Points (view on left of screen = left part - when mirrored)
   0 nose
