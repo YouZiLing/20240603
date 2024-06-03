@@ -4,6 +4,10 @@ MoveNet is developed by TensorFlow:
 https://www.tensorflow.org/hub/tutorials/movenet
 
 */
+function preload(){
+  doglmg = loadlmage("car.gif")
+}
+
 
 let video, bodypose, pose, keypoint, detector;
 let poses = [];
@@ -68,16 +72,16 @@ function drawSkeleton() {
     }
 
     // 眼睛
-    // partA = pose.keypoints[1];
-    // partB = pose.keypoints[2];
-    // if (partA.score > 0.1 && partB.score > 0.1) {
-    //   // line(partA.x, partA.y, partB.x, partB.y);
-    //   push();
-    //     image(carlmg,partA.x-75, partA.y-75,150,150)
-    //     //print(partA.x)
-    //   pop();
-    // }
-    
+    partA = pose.keypoints[1];
+    partB = pose.keypoints[2];
+    if (partA.score > 0.1 && partB.score > 0.1) {
+      // line(partA.x, partA.y, partB.x, partB.y);
+      push()
+        image(carlmg,partA.x-75, partA.y-75,150,150)
+        //print(partA.x
+      pop()
+      }
+      
     // shoulder to shoulder
     partA = pose.keypoints[5];
     partB = pose.keypoints[6];
