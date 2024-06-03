@@ -105,7 +105,7 @@ function drawSkeleton() {
           // Add text above nose
     if (pose.keypoints[0].score > 0.1) {
       textAlign(CENTER, BOTTOM);
-      textSize(30);
+      textSize(50);
       fill(255);
       text("412730185", pose.keypoints[0].x, pose.keypoints[0].y -200);
     }
