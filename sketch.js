@@ -71,7 +71,7 @@ function drawSkeleton() {
     if(partA.score > 0.1){
       push()
         textSize(50)
-        scale(-1,1)
+        // scale(-1,1)
         text("412730185,游子伶",partA.x-width,partA.y-150)
       pop()
     }
