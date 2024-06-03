@@ -63,34 +63,45 @@ function drawSkeleton() {
       if (pose.keypoints[j].score > 0.1 && pose.keypoints[j + 2].score > 0.1) {
         partA = pose.keypoints[j];
         partB = pose.keypoints[j + 2];
-        line(partA.x, partA.y, partB.x, partB.y);
+        // line(partA.x, partA.y, partB.x, partB.y);
       }
     }
+
+    // 眼睛
+    partA = pose.keypoints[1];
+    partB = pose.keypoints[2];
+    if (partA.score > 0.1 && partB.score > 0.1) {
+      // line(partA.x, partA.y, partB.x, partB.y);
+      push()
+        image(carlmg,partA.x-75, partA.y-75,150,150)
+        //print(partA.x
+      pop()
+      
     // shoulder to shoulder
     partA = pose.keypoints[5];
     partB = pose.keypoints[6];
     if (partA.score > 0.1 && partB.score > 0.1) {
-      line(partA.x, partA.y, partB.x, partB.y);
+      // line(partA.x, partA.y, partB.x, partB.y);
       
     }
     // hip to hip
     partA = pose.keypoints[11];
     partB = pose.keypoints[12];
     if (partA.score > 0.1 && partB.score > 0.1) {
-      line(partA.x, partA.y, partB.x, partB.y);
+      // line(partA.x, partA.y, partB.x, partB.y);
       
     }
     // shoulders to hips
     partA = pose.keypoints[5];
     partB = pose.keypoints[11];
     if (partA.score > 0.1 && partB.score > 0.1) {
-      line(partA.x, partA.y, partB.x, partB.y);
+      // line(partA.x, partA.y, partB.x, partB.y);
       
     }
     partA = pose.keypoints[6];
     partB = pose.keypoints[12];
     if (partA.score > 0.1 && partB.score > 0.1) {
-      line(partA.x, partA.y, partB.x, partB.y);
+      // line(partA.x, partA.y, partB.x, partB.y);
       
     }
     // hip to foot
@@ -98,14 +109,12 @@ function drawSkeleton() {
       if (pose.keypoints[j].score > 0.1 && pose.keypoints[j + 2].score > 0.1) {
         partA = pose.keypoints[j];
         partB = pose.keypoints[j + 2];
-        line(partA.x, partA.y, partB.x, partB.y);
+        // line(partA.x, partA.y, partB.x, partB.y);
         
       }
     }
           // 頭上學號
     if (pose.keypoints[0].score > 0.1) {
-      translate(video.width, 0);
-      scale(-1,1)
       textAlign(CENTER);
       textSize(50);
       fill(255);
